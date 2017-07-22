@@ -5,12 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Pony, pot or pint?</title>
         <!-- Bootstrap core CSS -->
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="/css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="/pony-pot-pint/ammap/ammap.css" type="text/css">
-        <script src="/pony-pot-pint/ammap/ammap.js" type="text/javascript"></script>
+        <link href="./css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="./ammap/ammap.css" type="text/css">
+        <script src="./ammap/ammap.js" type="text/javascript"></script>
         <!-- <script src="../css/style.min.css" type="text/javascript"></script> -->
         <!-- Styles -->
         <style>
@@ -355,17 +355,17 @@ width: 100px;
         </style>
 
         <!-- Resources -->
-        <script src="/pony-pot-pint/ammap/js/jquery-3.2.1.min.js"></script>
-        <script src="/pony-pot-pint/ammap/plugins/export/export.min.js"></script>
-        <link rel="stylesheet" href="/pony-pot-pint/ammap/plugins/export/export.css" type="text/css" media="all" />
-        <script src="/pony-pot-pint/ammap/themes/dark.js"></script>
+        <script src="./ammap/js/jquery-3.2.1.min.js"></script>
+        <script src="./ammap/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="./ammap/plugins/export/export.css" type="text/css" media="all" />
+        <script src="./ammap/themes/dark.js"></script>
         <!-- map file should be included after ammap.js -->
-        <script src="/pony-pot-pint/ammap/maps/js/australiaLow.js" type="text/javascript"></script>
+        <script src="./ammap/maps/js/australiaLow.js" type="text/javascript"></script>
 
         <script>
-        $.get( "/pony-pot-pint/ammap/data/geo_au.json", function loadMap( geo ) {
+        $.get( "./ammap/data/geo_au.json", function loadMap( geo ) {
             let states = [];
-          $.getJSON( "/pony-pot-pint/ammap/data/au_states.json", function ( data ) {
+          $.getJSON( "./ammap/data/au_states.json", function ( data ) {
                states = data;
           });
 
@@ -380,7 +380,7 @@ width: 100px;
             "theme": "dark",
             "colorSteps": 10,
             "dataProvider": {
-              "mapURL": "/pony-pot-pint/ammap/maps/svg/" + currentMap + ".svg",
+              "mapURL": "./ammap/maps/svg/" + currentMap + ".svg",
               "map": "australiaLow",
               "getAreasFromMap": true,
               areas: [ {
@@ -563,7 +563,7 @@ width: 100px;
         </div>
         <div id="chartdiv"></div>
         <div id="hawke-img">
-          <img src="/pony-pot-pint/images/hawke.png" alt="">
+          <img src="./images/hawke.png" alt="">
           <div class="hawke-text">
             ?
           </div>
@@ -691,23 +691,24 @@ width: 100px;
       </div>
     </body>
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-      <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="/assets/js/vendor/tether.min.js"></script>
-    <script src="/assets/js/vendor/holder.min.js"></script>
-    <script>
-      $(function () {
-        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
-
-        $(".card").click(function() {
-          window.location = $(this).find("a").attr("href");
-          return false;
-        });
-
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../assets/js/vendor/tether.min.js"></script>
+  <script src="../assets/js/vendor/holder.min.js"></script>
+  <script>
+    $(function () {
+      Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+      $(".card").click(function() {
+        window.location = $(this).find("a").attr("href");
+        return false;
       });
-    </script>
-    <script src="/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    });
+  </script>
+  <script src="../js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript" src="./assets/js/modernizr.js"></script>
+    <script src="./assets/js/main.min.js"></script>
+  </body>
 </html>
