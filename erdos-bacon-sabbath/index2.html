@@ -1,0 +1,652 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Erdos, Bacon, Sabbath Numbers</title>
+    <script src="js/cytoscape.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+
+</head>
+
+<style>
+html, body {
+  font-family:  "Helvetica Neue", Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  /*position: absolute;*/
+  background-color: #000;
+
+}
+.title-container {
+  color: #fff;
+  /*padding: 2rem;*/
+font-size: 1.5rem;
+}
+
+    #cy {
+        width: 100%;
+        height: 100%;
+        /*position: absolute;
+        top: 0px;
+        left: 0px;*/
+        margin-top: 2rem;
+    }
+</style>
+
+<body>
+  <div class="title-container">
+      So...what's your Erdos/Bacon/Sabbath number?
+  </div>
+    <div id="cy"></div>
+
+    <script>
+
+    const ERDOS_COLOR =  '#DE3128';
+    const BACON_COLOR = '#FACD37';
+    const SABBATH_COLOR = '#6FB1FC';
+    var elements = [];
+
+    var json_savage = './data/adam-savage.json';
+    var json_portman = './data/natalie-portman.json';
+
+    $.get(json_savage, function(data) {
+      onJSONLoaded(data);
+
+     }).then(function(data){
+      //elements.concat(data);
+    });
+
+function onJSONLoaded(data) {
+  console.log('onJSONLoaded',data);
+  var nodes = [];
+  var edges = [];
+
+  function extractNodes(obj) {
+    var counter = 1;
+
+    Object.keys(obj).forEach((key) => {
+      if (key === 'erdos' || key === 'bacon' || key === 'sabbath') {
+        var matrix = obj[key];
+        for(var i = 0; i < matrix.length; i++) {
+          counter++;
+
+            var matrix_inner = matrix[i];
+            for(var j = 0; j < matrix_inner.length; j++) {
+              //node
+              var node = matrix_inner[j];
+              var name = node['name'];
+              node['id'] = name.replace(/[\. ,:-]+/g, "") + counter;
+              node['faveShape'] = 'ellipse';
+              node['faveColor']= key === 'erdos' ? ERDOS_COLOR: key === 'bacon' ? BACON_COLOR: SABBATH_COLOR ;
+              nodes.push({'data':matrix_inner[j]});
+          }
+        }
+      }
+
+    });
+    //construct node & edge array
+    //elements['group'] = 'nodes';
+  //  elements.push(nodes.concat(edges));
+  //  elements = nodes.concat(edges);
+  }
+
+  function extractEdges(obj) {
+    var counter = 1;
+    Object.keys(obj).forEach((key) => {
+      if (key === 'erdos' || key === 'bacon' || key === 'sabbath') {
+        var matrix = obj[key];
+        for(var i = 0; i < matrix.length; i++) {
+          counter++;
+            var matrix_inner = matrix[i];
+            for(var j = 0; j < matrix_inner.length; j++) {
+              //node
+              var node = matrix_inner[j];
+              var name = node['name'];
+
+              var edge = {};
+                var collaborator = node['collaborator'];
+                if (collaborator) {
+                   edge['id'] = name.replace(/[\. ,:-]+/g, "") ;
+                   edge['source'] = name.replace(/[\. ,:-]+/g, "");
+                  edge['faveColor']=  key === 'erdos' ? ERDOS_COLOR: key === 'bacon' ? BACON_COLOR: SABBATH_COLOR ;
+                  edge['target'] = collaborator.replace(/[\. ,:-]+/g, "");
+                  edge['strength'] = 90;
+                  edge['weight'] = 1;
+                  edges.push({'data':edge});
+                }
+          }
+        }
+      }
+
+    });
+    //edge
+
+  }
+
+extractNodes(data);
+extractEdges(data);
+// console.log('nodes',nodes);
+// console.log('edges',edges);
+
+ elements.push(nodes.concat(edges));
+ //return nodes.concat(edges);
+}
+
+setTimeout(function(){
+  console.log('elements',elements);
+
+  var cy = cytoscape({
+   container:document.getElementById('cy'),
+
+  layout: {
+  name: 'random',
+  fit: true,
+//  avoidOverlap: true,
+  //directed: true,
+  padding: 30,
+  zoom: 0.5,
+  // boundingBox: {
+  //   x1: 0, y1: 0, x2: 1000, y2: 800
+  // }
+},
+
+elements:elements[0],
+/*
+    __elements:[
+
+      //nodes
+
+      {
+         group:'nodes',
+    data:{
+            "id":"AdamSavage",
+            "name":"Adam Savage",
+            "role":"author",
+            "title":"Making a point: wood- versus stone-tipped projectiles",
+            "source":"http://antiquity.ac.uk/ant/083/ant0830786.htm",
+            "collaborator":"Nicole M. Waguespack",
+            "collaborator_role":"author",
+            "faveColor":'#6FB1FC',
+            "faveShape":'ellipse'
+         }
+      },
+      {
+         data:{
+           "id":"Waguespack",
+           "name":"Waguespack",
+            "role":"author",
+            "title":"Global archaeological evidence for proboscidean overkill",
+            "source":"http://dx.doi.org/10.1073/pnas.0501947102",
+            "collaborator":"Paul Jeffrey Brantingham",
+            "collaborator_role":"author",
+            "faveColor":'#DE3128',
+            "faveShape":'ellipse'
+         } ,
+                renderedPosition: { x: 600, y: 400 }
+
+      },
+      {
+         data:{
+           "id":"Paul_Brantingham",
+           "name":"Paul Brantingham",
+            "role":"author",
+            "title":"Crime attractors, generators and detractors: land use and urban crime opportunities",
+            "source":"http://dx.doi.org/10.2148/benv.34.1.62",
+            "collaborator":"Patricia L. Brantingham",
+            "collaborator_role":"author",
+            "faveColor":'#DE3128',
+            "faveShape":'ellipse'
+         }
+      },
+      {
+         data:{
+           "id":"Patricia_Brantingham",
+           "name":"Patricia Brantingham",
+            "role":"author",
+            "title":"The social impact in a high-risk community: a cellular automata model",
+            "source":"http://dx.doi.org/10.1016/j.jocs.2011.05.008",
+            "collaborator":"Peter B. Borwein",
+            "collaborator_role":"author",
+            "faveColor":'#DE3128',
+            "faveShape":'ellipse'
+         }
+      },
+      {
+         data:{
+           "id":"Borwein",
+           "name":"Borwein",
+            "role":"author",
+            "title":"Generalizations of Gonçalves’ inequality",
+            "source":"http://www.ams.org/mathscinet-getitem?mr=2280202",
+            "collaborator":"Jeffrey D. Vaaler",
+            "collaborator_role":"author",
+            "faveColor":'#DE3128',
+            "faveShape":'ellipse'
+         }
+      },
+      {
+         data:{
+           "id":"Vaaler",
+           "name":"Vaaler",
+            "role":"author",
+            "title":"Multiplicative functions and small divisors",
+            "source":"http://www.ams.org/mathscinet-getitem?mr=1018367",
+            "collaborator":"Paul Erdos",
+            "collaborator_role":"author",
+            "faveColor":'#DE3128',
+            "faveShape":'ellipse'
+         }
+      },
+      {
+         data:{
+           "id":"PaulErdos",
+           "name":"Paul Erdos",
+            "role":"author",
+            "title":"Multiplicative functions and small divisors",
+            "source":"http://www.ams.org/mathscinet-getitem?mr=1018367",
+            "collaborator_role":"author",
+            "faveColor":'#6FB1FC',
+            "faveShape":'ellipse'
+         }
+      },
+
+    {data: {
+      "id": "ChristopherPenn",
+      "name": "Christopher Penn",
+        "role": "Willard",
+        "title": "Footloose",
+        "source": "http://www.imdb.com/title/tt0087277/",
+        "collaborator": "Kevin Bacon",
+        "collaborator_role": "Ren",
+        "faveColor":'#FACD37',
+        "faveShape":'ellipse',
+      },
+        renderedPosition: { x: 250, y: 250 }
+      },
+      {data:  {
+        "id": "KevinBacon",
+        "name": "Kevin Bacon",
+          "title": "Footloose",
+          "source": "http://www.imdb.com/title/tt0087277/",
+          "collaborator_role": "Ren",
+          "faveColor":'#6FB1FC',
+          "faveShape":'ellipse'
+        }},
+
+             {data:  {
+               "name": "Paul and Storm",
+               "id": "Paul_Storm",
+           "role": "vocals, guitar",
+           "title": "various songs in live shows",
+           "source": "https://en.wikipedia.org/wiki/Paul_and_Storm",
+           "collaborator": "Jonathan Coulton",
+           "collaborator_role": "vocals, guitar",
+           "faveColor":'#6FB1FC',
+           "faveShape":'ellipse'
+         }},
+             {data:  {
+               "name": "Jonathan Coulton",
+               "id": "Coulton",
+           "role": "vocals, guitar",
+           "title": "Sticking it to Myself",
+           "source": "http://en.wikipedia.org/wiki/Artificial_Heart_(album)",
+           "collaborator": "Stan Harrison",
+           "collaborator_role": "saxaphone",
+           "faveColor":'#6FB1FC',
+           "faveShape":'ellipse'
+         }},
+             {data:  {
+               "name": "Stan Harrison",
+               "id": "Harrison",
+           "role": "saxophone",
+           "title": "Dancing in the Street — David Bowie and Mick Jagger",
+           "source": "http://www.discogs.com/David-Bowie-Mick-Jagger-Dancing-In-The-Street/release/4797122",
+           "collaborator": "Mick Jagger",
+           "collaborator_role": "vocals",
+           "faveColor":'#6FB1FC',
+           "faveShape":'ellipse'
+         }},
+             {data:  {
+               "id": "Jagger",
+               "name": "Mick Jagger",
+           "role": "vocals",
+           "title": "It’s Only Rock ‘n Roll (But I Like It) — Artists for Children’s Promise",
+           "source": "http://en.wikipedia.org/wiki/It%27s_Only_Rock_%27n_Roll_(But_I_Like_It)",
+           "collaborator": "Ozzy Osbourne",
+           "collaborator_role": "vocals",
+           "faveColor":'#6FB1FC',
+           "faveShape":'ellipse'
+         }},
+             {data:  {
+               "id": "Osbourne",
+               "name": "Ozzy Osbourne",
+           "role": "vocals",
+           "title": "It’s Only Rock ‘n Roll (But I Like It) — Artists for Children’s Promise",
+           "source": "http://en.wikipedia.org/wiki/It%27s_Only_Rock_%27n_Roll_(But_I_Like_It)",
+           "collaborator_role": "vocals",
+           "faveColor":'#6FB1FC',
+           "faveShape":'ellipse'
+         }},
+         {data:  {
+           "id": "BlackSabbath",
+           "name": "Black Sabbath",
+       "faveColor":'#6FB1FC',
+       "faveShape":'ellipse'
+     }},
+         {data:  {
+           "id": "Hawking",
+           "name": "Stephen Hawking",
+           "role": "vocal sample",
+           "title": "Keep Talking — Pink Floyd",
+           "source": "http://en.wikipedia.org/wiki/Keep_Talking",
+           "collaborator": "David Gilmour",
+           "collaborator_role": "vocals, guitar, talk box",
+           "faveColor":'#6FB1FC',
+           "faveShape":'ellipse'
+         }},
+          {data:     {
+            "id": "Gilmour",
+            "name": "David Gilmour",
+        "role": "guitar",
+        "title": "Smoke on the Water — Rock Aid Armenia",
+        "source": "http://en.wikipedia.org/wiki/Rock_Aid_Armenia",
+        "collaborator": "Tony Iommi",
+        "collaborator_role": "guitar",
+        "faveColor":'#6FB1FC',
+        "faveShape":'ellipse'
+      }},
+           {data:  {
+             "id": "Iommi",
+             "name": "Tony Iommi",
+            "role": "guitar",
+            "title": "Smoke on the Water — Rock Aid Armenia",
+            "source": "http://en.wikipedia.org/wiki/Rock_Aid_Armenia",
+            "collaborator": "Tony Iommi",
+            "collaborator_role": "guitar",
+            "faveColor":'#6FB1FC',
+            "faveShape":'ellipse'
+          }},
+
+      // edges
+      {
+         data:{
+            id:'as1',
+            source:"AdamSavage",
+            target:"Waguespack",
+            faveColor:'#DE3128',
+            strength:90,
+            weight: 1
+         }
+      },
+      {
+         data:{
+            id:'as2',
+            source:"Waguespack",
+            target:"Paul_Brantingham",
+            faveColor:'#DE3128',
+            strength:90,
+            weight: 1
+         }
+      },
+      {
+         data:{
+            id:'as3',
+            source:"Paul_Brantingham",
+            target:"Patricia_Brantingham",
+            faveColor:'#DE3128',
+            strength:90,
+            weight: 1
+         }
+      },
+      {
+         data:{
+            id:'as4',
+            source:"Patricia_Brantingham",
+            target:"Borwein",
+            faveColor:'#DE3128',
+            strength:90,
+            weight: 1
+         }
+      },
+      {
+         data:{
+            id:'as5',
+            source:"Borwein",
+            target:"Vaaler",
+            faveColor:'#DE3128',
+            strength:90,
+            weight: 1
+         }
+      },
+      {
+         data:{
+            id:'as6',
+            source:"Vaaler",
+            target:"Paul_Erdos",
+            faveColor:'#DE3128',
+            strength:90,
+            weight: 1
+         }
+      },      {
+               data:{
+                  id:'as7',
+                  source:"SavageSavage",
+                  target:"Penn",
+                  faveColor:'#FACD37',
+                  strength:90
+               }
+            },      {
+                     data:{
+                        id:'as8',
+                        source:"Penn",
+                        target:"Bacon",
+                        faveColor:'#FACD37',
+                        strength:90
+                     }
+                   },      {
+                            data:{
+                               id:'as9',
+                               source:"Savage",
+                               target:"Paul_Storm",
+                               faveColor:'#6FB1FC',
+                               strength:90
+                            }
+                          },      {
+                                   data:{
+                                      id:'as10',
+                                      source:"Paul_Storm",
+                                      target:"Coulton",
+                                      faveColor:'#6FB1FC',
+                                      strength:90
+                                   }
+                                 },      {
+                                          data:{
+                                             id:'as11',
+                                             source:"Coulton",
+                                             target:"Harrison",
+                                             faveColor:'#6FB1FC',
+                                             strength:90
+                                          }
+                                        },      {
+                                                 data:{
+                                                    id:'as12',
+                                                    source:"Harrison",
+                                                    target:"Jagger",
+                                                    faveColor:'#6FB1FC',
+                                                    strength:90
+                                                 }
+                                               },      {
+                                                        data:{
+                                                           id:'as13',
+                                                           source:"Jagger",
+                                                           target:"Osbourne",
+                                                           faveColor:'#6FB1FC',
+                                                           strength:90
+                                                        }
+                                                      },      {
+                                                               data:{
+                                                                  id:'as14',
+                                                                  source:"Osbourne",
+                                                                  target:"Sabbath",
+                                                                  faveColor:'#6FB1FC',
+                                                                  strength:90
+                                                               }
+                                                             },      {
+                                                                      data:{
+                                                                         id:'as15',
+                                                                         source:"Savage",
+                                                                         target:"Hawking",
+                                                                         faveColor:'#6FB1FC',
+                                                                         strength:90
+                                                                      }
+                                                                    },      {
+                                                                             data:{
+                                                                                id:'as16',
+                                                                                source:"Hawking",
+                                                                                target:"Gilmour",
+                                                                                faveColor:'#6FB1FC',
+                                                                                strength:90
+                                                                             }
+                                                                           },      {
+                                                                                    data:{
+                                                                                       id:'as17',
+                                                                                       source:"Gilmour",
+                                                                                       target:"Iommi",
+                                                                                       faveColor:'#6FB1FC',
+                                                                                       strength:90
+                                                                                    }
+                                                                                  },      {
+                                                                                           data:{
+                                                                                              id:'as18',
+                                                                                              source:"Iommi",
+                                                                                              target:"Sabbath",
+                                                                                              faveColor:'#6FB1FC',
+                                                                                              strength:90
+                                                                                           }
+                                                                                        }
+   ], */
+   style:[
+      {
+         selector:'node',
+         style:{
+            'content':'data(name)',
+            'shape':'data(faveShape)',
+            'width':20,
+            'height':20,
+            'font-size':'5rem',
+            'text-valign':'center',
+            'text-outline-width':1,
+            'text-outline-color':'data(faveColor)',
+            'background-color':'data(faveColor)',
+            'color':'#fff'
+         }
+      },
+      // end nodes
+      {
+        selector: "[id^='AdamSavage']",
+        style:{
+              'background-image': 'https://farm1.staticflickr.com/231/524893064_f49a4d1d10_z.jpg',
+              'height': 60,
+              'width': 60,
+              'background-fit': 'cover',
+              'text-valign':'bottom',
+              'text-margin-y': 5,
+            //  'border-color': '#000',
+            //  'border-width': 3,
+              //'border-opacity': 0.5
+            }
+      },
+     {
+        selector: "[id^='PaulErdos']",
+        style:{
+              'background-image': 'https://farm4.staticflickr.com/3063/2751740612_af11fb090b_b.jpg',
+              'height': 60,
+              'width': 60,
+              'background-fit': 'cover',
+              'text-valign':'bottom',
+            }
+      },      {
+              selector: "[id^='KevinBacon']",
+              style:{
+                    'background-image': 'https://farm2.staticflickr.com/1261/1413379559_412a540d29_b.jpg',
+                    'height': 60,
+                    'width': 60,
+                    'background-fit': 'cover',
+                    'text-valign':'bottom',
+                  }
+                },      {
+                        selector: "[id^='BlackSabbath']",
+                        style:{
+                              'background-image':'https://farm8.staticflickr.com/7272/7633179468_3e19e45a0c_b.jpg'
+,
+                              'height': 60,
+                              'width': 60,
+                              'background-fit': 'cover',
+                              'text-valign':'bottom',
+                            }
+                      },
+
+
+      // Edges
+      {
+         selector:'edge',
+         style:{
+            'curve-style':'bezier',
+            // 'target-arrow-shape':'triangle',
+            // 'target-arrow-color':'#6FB1FC',
+            'line-color':'data(faveColor)',
+            'width':1
+         }
+      }
+   ]
+}
+
+);
+
+// End nodes
+cy.$("[id^='KevinBacon']").position({
+  x: 0,
+  y: 0
+});
+
+cy.$("[id^='PaulErdos']").position({
+  x: 1000,
+  y: 0
+});
+
+cy.$("[id^='BlackSabbath']").position({
+  x: 500,
+  y: 1000
+});
+
+cy.$("[id^='AdamSavage']").position({
+  x: 500,
+  y: 500
+});
+
+
+//fit in viewport
+cy.fit( cy.$('#KevinBacon, #PaulErdos, #BlackSabbath') );
+
+cy.on('select unselect', 'node',  function(e){
+  var node = cy.$('node:selected');
+console.log('node:select',node);
+  if( node.nonempty() ){
+  //  showNodeInfo( node );
+
+    Promise.resolve().then(function(){
+    //  return highlight( node );
+    });
+  } else {
+    //hideNodeInfo();
+    //clear();
+  }
+
+} );
+}, 3000);
+    </script>
+</body>
+</html>
