@@ -1,0 +1,19 @@
+
+iframe
+http://app.vizsweet.com/balloonrace/balloon_race_viz_remote.html?sheet_url=0Aqe2P9sYhZ2ndDgyTGhiZ0hMNjVrbzFldHdFUFcycmc&font_name=Source+Sans+Pro&font_weight=Medium&desktop_width=940&desktop_height=1900&tablet_width=940&tablet_height=1400&mobile_width=640&mobile_height=1500&offline_mode=false
+
+<iframe scrolling="no" class="viz-frame " style="height:2995px;" src="../../assets/js/balloonrace/balloon_race_viz_remote.html?sheet_url=0Aqe2P9sYhZ2ndDgyTGhiZ0hMNjVrbzFldHdFUFcycmc&font_name=Source+Sans+Pro&font_weight=Medium&desktop_width=940&desktop_height=1900&tablet_width=940&tablet_height=1400&mobile_width=640&mobile_height=1500&offline_mode=false"></iframe>
+
+
+config
+
+http://app.vizsweet.com/balloonrace/p/load_viz_data.php?google_docs_url_root=https%3A%2F%2Fdocs.google.com%2Fspreadsheet%2Fpub%3Fkey%3D&sheet_id=0Aqe2P9sYhZ2ndDgyTGhiZ0hMNjVrbzFldHdFUFcycmc&cells=%26single%3Dtrue%26gid%3D1%26range%3DB1%253AD100%26output%3Dcsv&referringdomain=http://www.informationisbeautiful.net/visualizations/snake-oil-superfoods/&type=config
+
+local copy
+https://docs.google.com/spreadsheets/d/15vmClyojC9g5AG0JMnlybdsAh4YxacgTndwTPJ0YsZ8/edit?usp=sharing
+
+https://docs.google.com/spreadsheet/pub?key=15vmClyojC9g5AG0JMnlybdsAh4YxacgTndwTPJ0YsZ8
+
+visualization data
+
+http://app.vizsweet.com/balloonrace/p/load_viz_data.php?google_docs_url_root=https%3A%2F%2Fdocs.google.com%2Fspreadsheet%2Fpub%3Fkey%3D&sheet_id=0Aqe2P9sYhZ2ndDgyTGhiZ0hMNjVrbzFldHdFUFcycmc&cells=%26single%3Dtrue%26gid%3D2%26range%3DA1%253AT500%26output%3Dcsv&referringdomain=http://www.informationisbeautiful.net/visualizations/snake-oil-superfoods/&type=data
