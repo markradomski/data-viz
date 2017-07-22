@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>There will be blood</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.title-container {
+  padding: 20px 0;
+}
+
+.title-container .title {
+  font-size: 40px;
+}
+
+.title-container .subtitle {
+  font-size: 20px;
+  margin-top: 10px;
+}
+</style>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="d-flex justify-content-between">
+        <a href="/" class="navbar-brand">portfolio</a>
+      </div>
+    </div>
+
+      <div class="container">
+        <div class="title-container">
+          <div class="title">
+            <div>There will be blood</div>
+          </div>
+          <div class="subtitle">
+              Australia's unemployment rate 2010 - 17
+          </div>
+        </div>
+
+          <p>Always wanting to try out the R language, this heat map is based on Nathan Yau's great <a href="http://flowingdata.com/2016/10/17/animated-map-of-unemployment/" target="_blank">animated map of US unemployment</a>.</br>
+           (Un)fortunately Australia missed most of the GFC and as such, the animation isn't nearly as impressive/appalling.</br>
+           If only the ABS would release <a href="https://www.acic.gov.au/publications/intelligence-products/national-wastewater-drug-monitoring-program-report" target="_blank">ellicit drug use patterns in wastewater analysis</a> by suburb...
+          </p>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GWCk8uMeUeU" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+
+      </div>
+
+
+    <footer class="text-muted">
+      <div class="container">
+        Credits: <a href="https://docs.employment.gov.au/node/34695" target="_blank">Department of Employment</a>, <a href="http://www.abs.gov.au/" target="_blank">Australian Bureau of Statistics </a>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+      <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/assets/js/vendor/tether.min.js"></script>
+    <script src="/assets/js/vendor/holder.min.js"></script>
+    <script>
+      $(function () {
+        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+
+        $(".card").click(function() {
+          window.location = $(this).find("a").attr("href");
+          return false;
+        });
+
+      });
+    </script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

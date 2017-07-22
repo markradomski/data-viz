@@ -1,0 +1,713 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Pony, pot or pint?</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="/pony-pot-pint/ammap/ammap.css" type="text/css">
+        <script src="/pony-pot-pint/ammap/ammap.js" type="text/javascript"></script>
+        <!-- <script src="../css/style.min.css" type="text/javascript"></script> -->
+        <!-- Styles -->
+        <style>
+
+
+        .iib-c.iib-c-alt,.iib-c.iib-c-viz {
+          border-bottom: 1px solid #f1f1ef
+        }
+
+        .iib-c.iib-c-alt {
+          background: #fafafa
+        }
+
+        .iib-c.iib-c-margin-top {
+          margin-top: 20px
+        }
+
+        @media screen and (min-width: 50em) {
+          .iib-c.iib-c-margin-top {
+            margin-top:30px
+          }
+        }
+
+        .iib-c.iib-c-border-top {
+          border-top: 1px solid #f1f1ef;
+          margin-top: 10px
+        }
+
+        .iib-c.iib-c-border-top-seamless {
+          border-top: 1px solid #f1f1ef;
+          display: none
+        }
+
+        @media screen and (min-width: 40em) {
+          .iib-c.iib-c-border-top-seamless {
+            display:block
+          }
+        }
+
+        .iib-c.iib-c-no-border-bottom {
+          border-bottom: none;
+          margin-top: 0
+        }
+
+        .iib-c.iib-c-no-border-bottom.iib-c-post-nav+.iib-c-banner {
+          padding-top: 0
+        }
+
+        .iib-c.iib-c-dark {
+          background: #1d1d1b
+        }
+
+        .iib-c.iib-c-dark h1,.iib-c.iib-c-dark h2,.iib-c.iib-c-dark h3,.iib-c.iib-c-dark p {
+          color: #fff
+        }
+
+        .iib-c.iib-c-dark p {
+          margin-top: 20px;
+          font-size: 1rem
+        }
+
+        .iib-c.iib-c-dark .i-small {
+          opacity: .4
+        }
+
+        .iib-c.iib-c-embed.iib-c-embed-with-fallback,.iib-c.iib-c-viz.iib-c-embed-with-fallback {
+          display: none
+        }
+
+        @media screen and (min-width: 30em) {
+          .iib-c.iib-c-embed.iib-c-embed-with-fallback,.iib-c.iib-c-viz.iib-c-embed-with-fallback {
+            display:block
+          }
+        }
+
+        .iib-c.iib-c-embed-fallback {
+          display: block
+        }
+
+        @media screen and (min-width: 30em) {
+          .iib-c.iib-c-embed-fallback {
+            display:none
+          }
+        }
+
+        body.b-single .iib-c-banner.collapsed {
+          display: none
+        }
+
+        body.b-page .iib-c-banner.collapsed {
+          padding: 20px 0 10px;
+          border-bottom: none
+        }
+
+        .iib-w.iib-w-banner {
+          text-align: center
+        }
+
+        @media screen and (min-width: 30em) {
+          .iib-w.iib-w-banner {
+            padding:0
+          }
+        }
+
+        .iib-w.iib-w-static {
+          position: relative;
+          z-index: 9
+        }
+
+        .iib-w.iib-w-hot {
+          padding: 10px;
+          background: #fafafa;
+          max-width: calc(100% - 40px)
+        }
+
+        @media screen and (min-width: 30em) {
+          .iib-w.iib-w-hot {
+            padding:20px
+          }
+        }
+
+        @media screen and (min-width: 50em) {
+          .iib-w.iib-w-hot {
+            max-width:1276px
+          }
+        }
+
+        .iib-w.iib-w-posts {
+          max-width: calc(100% - 20px)
+        }
+
+        @media screen and (min-width: 30em) {
+          .iib-w.iib-w-posts {
+            width:calc(100% - 20px)
+          }
+        }
+
+        @media screen and (min-width: 50em) {
+          .iib-w.iib-w-posts {
+            width:calc(100% - 70px);
+            max-width: 1630px
+          }
+        }
+
+        .iib-w.iib-w-default {
+          max-width: calc(100% - 40px)
+        }
+
+        @media screen and (min-width: 40em) {
+          .iib-w.iib-w-default {
+            max-width:1276px;
+            margin-left: auto;
+            margin-right: auto
+          }
+
+          .iib-w.iib-w-default:after {
+            clear: both;
+            content: "";
+            display: table
+          }
+        }
+
+        @media screen and (min-width: 50em) {
+          .iib-w.iib-w-default {
+            max-width:1276px
+          }
+        }
+
+        .iib-w.iib-w-viz {
+          padding: 20px 0
+        }
+
+        .iib-w.iib-w-viz-static {
+          min-height: 400px
+        }
+
+        .iib-w.iib-w-seamless {
+          padding-top: 0
+        }
+
+        .iib-w.iib-w-viz-interactive iframe.viz-frame {
+          margin: 0 auto;
+          border: none;
+          padding: 0;
+          width: 100%
+        }
+
+        .iib-w.iib-w-tab-content {
+          display: none
+        }
+
+        .iib-w.iib-w-tab-content.on {
+          display: block
+        }
+
+        .iib-w.iib-w-blog {
+          max-width: 1276px;
+          margin-left: auto;
+          margin-right: auto;
+          width: calc(100% - 40px);
+          max-width: 100%
+        }
+
+
+        body {
+          font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+        }
+
+        .title-container {
+          padding: 20px;
+        }
+
+        .title-container .title {
+          font-size: 40px;
+        }
+
+        .title-container .subtitle {
+          font-size: 20px;
+          margin-top: 10px;
+        }
+
+        #chartdiv {
+          background-color: #F9F4ED;
+          width: 100%;
+          height: 800px;
+        }
+
+        #info {
+          position: absolute;
+          top: 700px;
+        }
+
+        #hawke-img {
+          position: absolute;
+          top: 300px;
+          left: 150px;
+          text-align: center;
+        }
+
+        #hawke-img img {
+          width: 60px;
+          cursor: pointer;
+        }
+
+        #hawke-img .hawke-text {
+          margin-top: 10px;
+          font-size: 25px;
+        }
+
+        .glass-container {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          margin-bottom: 5rem;
+        }
+
+        .glass-cell {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          width: 146px;
+          height: 180px;
+        }
+
+        .glass-svg {
+          height: 120px;
+width: 100px;
+        }
+
+        .glass-info {
+          /*position: absolute;
+          bottom: 25px;*/
+          text-align: center;
+        }
+
+          .glass-name {
+            height: 2rem;
+            color: #fff;
+            cursor: default;
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+          }
+
+          .glass-text {
+            background-color: #4D4D4D;
+            font-size: 1rem;
+            font-family: 'Cabin Condensed', sans-serif !important;
+            letter-spacing: 1px;
+            color: #fff;
+            margin: 0 !important;
+            padding: 6px 8px;
+            line-height: 1rem;
+            visibility: hidden;
+          }
+
+          #_115 .glass-text {
+              background-color: #be1823;
+          }
+
+          #_115 .glass-svg {
+            width: 60px;
+          }
+
+          #_140 .glass-text {
+            background-color: #3baa35;
+          }
+          #_170 .glass-text {
+            background-color: #662681;
+          }
+
+          #_170 .glass-svg {
+            width: 70px;
+          }
+          #_200 .glass-text {
+            background-color: #f9b233;
+          }
+          #_285 .glass-text {
+            background-color: #1f71b8;
+          }
+          #_425 .glass-text {
+            background-color: #e72073;
+          }
+          #_570 .glass-text {
+            background-color: #575756;
+          }
+          #_1140 .glass-text {
+            background-color: #a5daf0;
+          }
+
+          #_1400.glass-cell {
+              height:250px;
+          }
+
+          #_1400 .glass-svg {
+            margin-bottom: 30px;
+          }
+
+
+
+
+        </style>
+
+        <!-- Resources -->
+        <script src="/pony-pot-pint/ammap/js/jquery-3.2.1.min.js"></script>
+        <script src="/pony-pot-pint/ammap/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="/pony-pot-pint/ammap/plugins/export/export.css" type="text/css" media="all" />
+        <script src="/pony-pot-pint/ammap/themes/dark.js"></script>
+        <!-- map file should be included after ammap.js -->
+        <script src="/pony-pot-pint/ammap/maps/js/australiaLow.js" type="text/javascript"></script>
+
+        <script>
+        $.get( "/pony-pot-pint/ammap/data/geo_au.json", function loadMap( geo ) {
+            let states = [];
+          $.getJSON( "/pony-pot-pint/ammap/data/au_states.json", function ( data ) {
+               states = data;
+          });
+
+
+          var defaultMap = "australiaLow";
+
+          // calculate which map to be used
+          var currentMap = defaultMap;
+
+          let map = AmCharts.makeChart( "chartdiv", {
+            "type": "map",
+            "theme": "dark",
+            "colorSteps": 10,
+            "dataProvider": {
+              "mapURL": "/pony-pot-pint/ammap/maps/svg/" + currentMap + ".svg",
+              "map": "australiaLow",
+              "getAreasFromMap": true,
+              areas: [ {
+                id: "AU-SA",color: "#ffffff"
+              },{
+                id: "AU-TAS",color: "#ffffff"
+              },{
+                id: "AU-QLD",color: "#ffffff"
+              },{
+                id: "AU-WA",  color: "#ffffff"
+              },{
+                id: "AU-NT",  color: "#ffffff"
+              },{
+                id: "AU-VIC",  color: "#ffffff"
+              },{
+                id: "AU-ACT",  color: "#ffffff", "callout": true
+              },{
+                id: "AU-NSW",color: "#ffffff"
+              }
+            ]
+            },
+            "areasSettings": {
+              "autoZoom": false,
+              "selectedColor": "#9efc80",
+              "selectable": true,
+              "rollOverColor": "#d7f7cd",
+              "balloonText": "[[title]]"
+            },
+            "imagesSettings": {
+              "labelColor": "#000",
+              "labelPosition": "middle"
+            },
+            // "titles": [
+            //   {
+            //     "text": "Chart Title",
+            //     "size": 15
+            //   }
+            // ],
+
+            "listeners": [ {
+              "event": "init",
+              "method": updateHeatmap
+            },{
+              "event": "rollOverMapObject",
+              "method": onHoverState
+            },{
+              "event": "mouseDownMapObject",
+              "method": onClickState
+            }
+          ]
+
+          } );
+
+            map.dragMap = false; // cant move map
+            map.zoomControl = {
+             zoomControlEnabled: false,
+             panControlEnabled: false
+      };
+          // set up a longitude exceptions for certain areas
+          var longitude = {
+              "AU-TAS": 147
+          };
+
+          var latitude = {
+            "AU-TAS": -42
+
+          };
+
+          // Positions of callouts
+          var callouts = [
+
+          ];
+
+          var offset = 0;
+
+          setTimeout(function () {
+            // iterate through areas and put a label over center of each
+            map.dataProvider.images = [];
+            for( x in map.dataProvider.areas ) {
+              var area = map.dataProvider.areas[ x ];
+              area.groupId = area.id;
+              var image = new AmCharts.MapImage();
+              image.latitude = latitude[ area.id ] || map.getAreaCenterLatitude( area );
+              image.longitude = longitude[ area.id ] || map.getAreaCenterLongitude( area );
+              image.label = area.id.split('-').pop();
+              image.title = area.title;
+              image.linkToObject = area;
+              image.groupId = area.id;
+              map.dataProvider.images.push( image );
+            }
+            map.validateData();
+            //console.log(map.dataProvider);
+          }, 100)
+
+
+          function updateHeatmap( event ) {
+            var map = event.chart;
+            if ( map.dataGenerated )
+              return;
+            if ( map.dataProvider.areas.length === 0 ) {
+              setTimeout( updateHeatmap, 100 );
+              return;
+            }
+            for ( var i = 0; i < map.dataProvider.areas.length; i++ ) {
+              map.dataProvider.areas[ i ].value = Math.round( Math.random() * 10000 );
+            }
+            map.dataGenerated = true;
+            map.validateNow();
+          }
+
+          // glass cell anchors
+          let _115 =  $('#_115 .glass-text');
+          let _140 =  $('#_140 .glass-text');
+          let _170 =  $('#_170 .glass-text');
+          let _200 =  $('#_200 .glass-text');
+          let _285 =  $('#_285 .glass-text');
+          let _425 =  $('#_425 .glass-text');
+          let _570 =  $('#_570 .glass-text');
+          let _1140 =  $('#_1140 .glass-text');
+          let _1400 =  $('#_1400 .glass-text');
+           let _hawke = $('#hawke-img');
+
+          _hawke.mousedown(function(event) {
+              $('.glass-text').css('visibility', 'hidden');
+              $('.glass-cell').css('opacity',0.1);
+              $('#_1400.glass-cell').css('opacity',1);
+              _1400.text('Yard').css('visibility', 'visible');
+              map.goHome(); //reset
+
+            });
+
+          function onHoverState (event) {
+            //  console.log('mouseDownMapObject',event);
+          };
+
+          function onClickState(event) {
+            const stateId = event.mapObject.groupId;
+              //get state by id
+              let state = getStateDataById(stateId);
+
+            // jquery visibility hackery
+            $('.glass-cell').css('opacity',1.0);
+            //hide yard glass
+            $('#_1400.glass-cell').css('opacity',0.1);
+            _1400.css('visibility', 'hidden');
+
+            state[115] ? _115.text(state[115]).css('visibility', 'visible') :  _115.css('visibility', 'hidden') && $('#_115.glass-cell').css('opacity',0.1);
+            state[140] ? _140.text(state[140]).css('visibility', 'visible') : _140.css('visibility', 'hidden') && $('#_140.glass-cell').css('opacity',0.1);
+            state[170] ? _170.text(state[170]).css('visibility', 'visible') : _170.css('visibility', 'hidden') && $('#_170.glass-cell').css('opacity',0.1);
+            state[200] ? _200.text(state[200]).css('visibility', 'visible') : _200.css('visibility', 'hidden') && $('#_200.glass-cell').css('opacity',0.1);
+            state[285] ? _285.text(state[285]).css('visibility', 'visible') : _285.css('visibility', 'hidden') && $('#_285.glass-cell').css('opacity',0.1);
+            state[425] ? _425.text(state[425]).css('visibility', 'visible') : _425.css('visibility', 'hidden') && $('#_425.glass-cell').css('opacity',0.1);
+            state[570] ? _570.text(state[570]).css('visibility', 'visible') : _570.css('visibility', 'hidden') && $('#_570.glass-cell').css('opacity',0.1);
+            state[1140] ? _1140.text(state[1140]).css('visibility', 'visible') : _1140.css('visibility', 'hidden') && $('#_1140.glass-cell').css('opacity',0.1);
+          }
+
+          function getStateDataById(id) {
+              let state = null;
+            for (var i = 0; i < states.length; i++) {
+              if (states[i].id === id) {state = states[i]};
+            }
+              return state;
+          }
+        } );
+		</script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse bg-inverse">
+          <div class="d-flex justify-content-between">
+            <a href="/" class="navbar-brand">portfolio</a>
+          </div>
+        </div>
+        <div class="title-container">
+          <div class="title">
+            <div>Pony, pot or pint?</div>
+          </div>
+          <div class="subtitle">
+              Beer glass sizes across the land
+          </div>
+        </div>
+        <div id="chartdiv"></div>
+        <div id="hawke-img">
+          <img src="/pony-pot-pint/images/hawke.png" alt="">
+          <div class="hawke-text">
+            ?
+          </div>
+        </div>
+        <div id="info">
+          <div class="glass-container">
+            <div id="_115" class="glass-cell">
+              <svg class="glass-svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;" d="m 31.987816,959.36219 c -1.54884,0 -2.76129,1.2374 -2.90791,2.75 -4.09608,14.2684 -4.09608,28.2684 -0.0625,40.56271 3.60435,13.0731 5.89436,23.2039 5.97209,33.6873 l 0,8 c 5e-5,0.5236 0.4767,0.9999 1.00057,1 l 28.01594,0 c 0.52388,-10e-5 1.00052,-0.4764 1.00057,-1 l 0,-8 c 0,-14.8649 2.94603,-24.6673 5.94088,-33.6563 4.06486,-15.32531 4.06486,-26.32531 0.0312,-40.62471 -0.6709,-1.3876 -1.62252,-2.6786 -2.97044,-2.719 z m 0,2 36.02049,0 c 0.57169,0 1.00057,0.4287 1.00057,1 1.05935,4.4339 2.14417,9.0647 2.59517,13 l -43.21208,0 c 0.65387,-4.6406 1.56392,-9.1746 2.59523,-13 0.17506,-0.7546 0.60756,-0.7698 1.00062,-1 z m -3.78341,16 43.5873,0 c 0.21887,8.0184 -0.78169,17.0184 -2.75157,24.71871 -3.44011,12.8708 -5.86213,22.8663 -6.03473,33.2813 l -26.0148,0 c 5e-5,-10.9816 -3.12787,-24.4606 -6.06595,-33.2813 -2.93912,-11.70031 -2.93912,-16.70031 -2.72025,-24.71871 z m 8.78625,60.00001 26.0148,0 0,6 -26.0148,0 z" fill="#000000" fill-opacity="1" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
+              <div class="glass-info">
+                  <div class="glass-size">115 ml</div>
+                  <div class="glass-name">
+                    <div class="glass-text"></div>
+                  </div>
+            </div>
+            </div>
+            <div id="_140" class="glass-cell">
+              <svg  class="glass-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M67.5,28.1l-0.3-7c-0.1-1.6-1.4-2.9-3.1-2.9H35.9c-1.6,0-3,1.3-3.1,2.9l-0.3,7c-0.3,6.1,0.2,12.2,1.4,18.2l1,5  c1.3,6.2,1.7,12.6,1.3,18.9l-0.5,8.6c-0.1,0.8,0.2,1.6,0.8,2.2c0.6,0.6,1.4,0.9,2.2,0.9h22.7c0.8,0,1.6-0.3,2.2-0.9  c0.6-0.6,0.9-1.4,0.8-2.2l-0.5-8.6c-0.4-6.3,0-12.7,1.3-18.9l1-5C67.3,40.3,67.7,34.1,67.5,28.1z M35.9,20.1h28.1c0.6,0,1,0.4,1.1,1  l0.3,6.6H34.6l0.3-6.6C34.9,20.5,35.4,20.1,35.9,20.1z M64.1,45.8l-1,5c-1.3,6.4-1.7,12.9-1.3,19.4l0.5,8.6c0,0.3-0.1,0.5-0.3,0.7  c-0.2,0.2-0.4,0.3-0.7,0.3H38.6c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.5-0.3-0.7l0.5-8.6c0.4-6.5,0-13-1.3-19.4l-1-5  c-1.1-5.3-1.5-10.7-1.4-16.1h31C65.6,35.1,65.2,40.5,64.1,45.8z"/></svg>
+              <div class="glass-info">
+                <div class="glass-size">140 ml</div>
+                <div class="glass-name">
+                  <div class="glass-text"></div>
+                </div>
+            </div>
+          </div>
+            <div id="_170" class="glass-cell">
+<svg class="glass-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M74.97,6.043C74.941,5.459,74.459,5,73.874,5H26.125c-0.585,0-1.067,0.459-1.096,1.043  c-0.003,0.072-0.356,7.319-0.284,16.085c0.098,11.817,0.88,20.63,2.326,26.195c0.78,3.006,1.66,5.696,2.51,8.296  c1.952,5.972,3.796,11.611,3.796,19.532v17.75c0,0.606,0.491,1.098,1.098,1.098h15.506v-2.195H35.573v-7.15h28.854v7.15H50.018V95  h15.507c0.606,0,1.098-0.491,1.098-1.098v-17.75c0-7.921,1.844-13.562,3.797-19.533c0.85-2.601,1.729-5.29,2.51-8.295  c1.445-5.564,2.228-14.377,2.325-26.195C75.327,13.362,74.974,6.115,74.97,6.043z M72.823,7.195c0.075,1.889,0.221,6.164,0.238,11.4  c-1.625,0.187-2.605,0.774-3.487,1.303c-0.94,0.564-1.753,1.051-3.464,1.051c-1.71,0-2.522-0.487-3.464-1.051  c-1.065-0.639-2.274-1.364-4.592-1.364s-3.526,0.725-4.592,1.364c-0.941,0.564-1.754,1.051-3.464,1.051  c-1.71,0-2.523-0.487-3.463-1.051c-1.066-0.639-2.274-1.364-4.592-1.364c-2.317,0-3.526,0.725-4.592,1.364  c-0.941,0.564-1.753,1.051-3.463,1.051s-2.522-0.487-3.463-1.051c-0.882-0.529-1.862-1.116-3.486-1.303  c0.018-5.236,0.163-9.512,0.238-11.4H72.823z M70.804,47.772c-0.763,2.94-1.632,5.596-2.472,8.165  c-2.008,6.144-3.905,11.945-3.905,20.216v7.307H35.573v-7.307c0-8.271-1.896-14.072-3.905-20.214  c-0.84-2.569-1.709-5.227-2.472-8.167c-1.766-6.799-2.222-17.923-2.257-26.96c1.007,0.161,1.646,0.543,2.357,0.97  c1.066,0.639,2.274,1.363,4.592,1.363c2.318,0,3.526-0.724,4.592-1.363c0.94-0.564,1.753-1.051,3.463-1.051s2.522,0.487,3.463,1.051  c1.066,0.639,2.274,1.363,4.592,1.363c2.317,0,3.526-0.724,4.592-1.363c0.941-0.564,1.754-1.051,3.464-1.051  s2.522,0.487,3.464,1.051c1.065,0.639,2.274,1.363,4.592,1.363c2.318,0,3.526-0.724,4.593-1.363c0.711-0.427,1.35-0.809,2.358-0.97  C73.026,29.849,72.57,40.972,70.804,47.772z"/></svg>
+<div class="glass-info">
+                <div class="glass-size">170 ml</div>
+                <div class="glass-name">
+                  <div class="glass-text"></div>
+                </div>
+            </div>
+          </div>
+            <div id="_200" class="glass-cell">
+<svg class="glass-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path fill="#000000" d="M60.5,67.852c0-3.519,0.828-6.498,1.976-10.623C64.675,49.316,68,37.357,68,10.492   c0-0.266-0.105-0.52-0.293-0.707S67.266,9.492,67,9.492L32.875,9.508c-0.552,0-1,0.448-1,1c0,26.865,3.325,38.83,5.525,46.748   c1.146,4.127,1.975,7.108,1.975,10.627c0,6.537-1.292,10.002-2.329,12.786c-0.628,1.687-1.171,3.143-1.171,4.776   c0,4.263,9.614,5.206,13.906,5.305c0.031,0.003,0.062,0.25,0.094,0.25H50v-0.494c4.245-0.091,14-0.767,14-5.061   c0-1.634-0.543-3.094-1.171-4.785C61.792,77.866,60.5,74.389,60.5,67.852z M39.327,56.721c-2.144-7.715-5.369-19.324-5.45-45.213   l32.122-0.016c-0.081,25.89-3.307,37.491-5.45,45.201C59.404,60.809,58.5,64.06,58.5,67.852c0,5.74,0.982,9.345,1.909,12.002   c-2.849,1.244-8.335,1.615-10.473,1.653c-2.158-0.038-7.623-0.408-10.467-1.65c0.926-2.647,1.905-6.242,1.905-11.974   C41.375,64.091,40.471,60.839,39.327,56.721z M49.938,88.507c-6.653-0.14-12.062-1.512-12.062-3.062   c0-1.169,0.396-2.319,0.911-3.71c3.614,1.512,9.773,1.984,10.997,2.015c0.031,0.003,0.062,0.25,0.093,0.25H50   c0.031,0,0.062-0.247,0.093-0.25c1.226-0.03,7.394-0.382,10.998-1.896C61.606,83.248,62,84.339,62,85.507   C62,87.057,56.591,88.367,49.938,88.507z"/></g></svg>
+<div class="glass-info">
+                <div class="glass-size">200 ml</div>
+                <div class="glass-name">
+                  <div class="glass-text"></div>
+                </div>
+            </div>
+          </div>
+            <div id="_285" class="glass-cell">
+<svg class="glass-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 125" enable-background="new 0 0 90 90" xml:space="preserve"><g><path d="M44.999,85.842c-3.258,0-7.394-0.497-7.568-0.518c-2.792-0.303-4.592-1.29-5.338-2.935   c-1.109-2.443,0.672-5.323,1.011-5.835c1.703-3.571,2.054-6.981,2.054-10.997c0-3.893-0.899-21.065-3.755-31.91   c-2.917-11.079-2.244-27.824-2.214-28.531c0.022-0.536,0.463-0.958,0.999-0.958h29.626c0.535,0,0.977,0.422,0.999,0.958   c0.03,0.707,0.699,17.452-2.22,28.531c-2.852,10.848-3.75,28.019-3.75,31.91c0,4.021,0.35,7.434,2.053,10.997   c0.338,0.51,2.121,3.39,1.012,5.834c-0.746,1.645-2.549,2.633-5.355,2.937C52.391,85.345,48.259,85.842,44.999,85.842z    M31.156,6.158c-0.098,3.75-0.271,17.673,2.181,26.979c2.904,11.035,3.82,28.471,3.82,32.42c0,3.732-0.277,7.761-2.282,11.93   c-0.024,0.049-0.052,0.096-0.082,0.14c-0.448,0.646-1.481,2.617-0.878,3.94c0.541,1.187,2.335,1.617,3.744,1.77   c0.055,0.007,4.204,0.505,7.34,0.505c3.14,0,7.283-0.498,7.324-0.504c1.424-0.153,3.219-0.585,3.761-1.771   c0.604-1.323-0.429-3.293-0.878-3.941c-0.029-0.043-0.058-0.09-0.08-0.137c-2.007-4.161-2.283-8.193-2.283-11.931   c0-3.948,0.914-21.381,3.816-32.419c2.453-9.312,2.283-23.231,2.186-26.98H31.156z"/></g></svg>
+              <div class="glass-info">
+                <div class="glass-size">285 ml</div>
+                <div class="glass-name">
+                  <div class="glass-text"></div>
+                </div>
+            </div>
+          </div>
+            <div id="_425" class="glass-cell">
+<svg class="glass-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path fill="#000000" d="M71.417,10c-0.823,0-40.817,0-42,0S27.955,10.463,28,11.083s6.038,70.396,6.109,73.167   c0.104,4.016,2.375,5.094,4.174,5.297C40.871,89.84,45.082,90,49.745,90c0,0,0.027,0,0.027,0c5.044,0,9.787-0.188,12.66-0.512   c1.801-0.203,3.975-1.269,4.076-5.213c0.072-2.772,5.645-72.6,5.709-73.195S72.24,10,71.417,10z M70.291,12   c-1.066,8.956-7.707,64.777-7.775,67.051c-0.061,1.99-0.955,2.45-2.277,2.578c-2.73,0.262-6.127,0.357-9.635,0.369   c-0.277,0-0.552,0.002-0.832,0.002c-3.456-0.001-6.627-0.069-9.175-0.313c-1.543-0.148-2.224-0.891-2.277-2.633   C38.25,76.78,31.609,20.952,30.543,12H70.291z M62.221,87.508c-2.804,0.317-7.447,0.507-12.423,0.507   c-4.592,0-8.668-0.163-11.185-0.448c-1.031-0.116-2.223-0.604-2.294-3.367c-0.004-0.174-0.03-0.595-0.074-1.225   c0.596,0.375,1.311,0.621,2.161,0.703C40.96,83.923,45.072,84,49.688,84c0.001,0,0,0,0.001,0c0.028,0,0.055,0,0.083,0   c0.027,0,0.054,0,0.081,0h0.001c0.236,0,0.47-0.002,0.705-0.002c4.745-0.012,9.135-0.117,11.869-0.379   c0.856-0.082,1.57-0.315,2.164-0.671c-0.046,0.659-0.073,1.103-0.077,1.28C64.445,86.898,63.316,87.385,62.221,87.508z"/></g></svg>
+                  <div class="glass-info">
+                <div class="glass-size">425 ml</div>
+                <div class="glass-name">
+                  <div class="glass-text"></div>
+                </div>
+            </div>
+          </div>
+            <div id="_570" class="glass-cell">
+<svg class="glass-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path d="M75.9,24.3c-0.2-1.5-0.4-2.9-0.4-4.2l0-0.6c0.2-3.7,0.8-12.2,0.8-12.4c0-0.6-0.1-1.1-0.4-1.5C75.6,5.4,75.2,5,74.4,5H25.6   c-0.8,0-1.3,0.3-1.5,0.6c-0.3,0.4-0.5,0.9-0.4,1.4c0,0.1,0.5,7.1,0.7,11.2c0,0.4,0,0.8,0.1,1.2l0,0.1c0.1,1.4-0.1,3-0.4,4.7   c-0.3,2-0.6,4.1-0.5,6.3c0.1,1.7,0.6,3.4,1.1,5c0.5,1.6,1,3.2,1.1,4.8c1.5,23.7,3.1,48,3.2,48.9c0.1,1.7,1.4,3.4,3,4   C33.6,93.7,38.3,95,50,95c11.7,0,16.4-1.2,17.9-1.8c1.7-0.6,2.9-2.2,3-3.9c0-0.7,1-14.7,2-30.9l1.2-18c0.1-1.6,0.6-3.2,1.1-4.8   c0.5-1.6,1-3.3,1.1-5C76.5,28.4,76.2,26.3,75.9,24.3z M73.9,7.5c-0.1,1.7-0.5,7-0.7,10.7H26.9c-0.2-3.7-0.6-9-0.7-10.7L73.9,7.5z    M73.9,30.4c-0.1,1.4-0.5,2.9-1,4.4c-0.5,1.7-1.1,3.5-1.2,5.4l-1.2,18c-1.1,16.2-2,30.2-2,30.9c-0.1,0.9-0.7,1.6-1.4,1.8   c-1.1,0.4-5.5,1.6-17.1,1.6c-11.6,0-16-1.2-17.1-1.6c-0.6-0.2-1.3-0.9-1.4-1.8c-0.1-0.9-1.7-25.2-3.2-48.9   c-0.1-1.9-0.7-3.7-1.2-5.4c-0.5-1.6-0.9-3-1-4.5c-0.1-1.9,0.2-3.9,0.4-5.7c0.2-1.4,0.4-2.7,0.4-4H73c0,1.3,0.2,2.6,0.4,4   C73.8,26.5,74.1,28.5,73.9,30.4z"/></g></svg>
+              <div class="glass-info">
+                <div class="glass-size">570 ml</div>
+                <div class="glass-name">
+                  <div class="glass-text"></div>
+                </div>
+            </div>
+          </div>
+            <div id="_1140" class="glass-cell">
+  <svg class="glass-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path fill="#000000" d="M74.938,24.823c-2.411,0-3.426-0.334-3.821-0.533l0.874-6.149c0.041-0.287-0.045-0.577-0.234-0.796   C71.565,17.126,71.289,17,71,17H49.834c-4.724,0-9.451-2.446-13.621-4.604c-3.539-1.832-6.88-3.562-9.782-3.562   c-6.307,0-10.022,4.076-10.177,4.25c-0.206,0.229-0.287,0.545-0.231,0.849c0.055,0.304,0.254,0.568,0.528,0.711   c0.029,0.016,2.92,1.594,3.868,8.057l8.409,57.353l-0.658,7.874c-0.041,0.482,0.271,0.925,0.739,1.05   c0.312,0.082,7.734,2.029,17.091,2.029s16.781-1.954,17.092-2.038c0.469-0.125,0.779-0.567,0.738-1.051l-0.658-7.721l0.728-5.119   c0.478-1.492,6.656-3.593,10.788-4.994C82.055,67.583,83,62.135,83,57.667V32.979C83,28.024,79.836,24.823,74.938,24.823z    M65.729,62.205l3.905-27.483c0.671-2.336,2.898-2.711,4.241-2.711c0.969,0,2.125,0.439,2.125,2.531v20.75   c0,4.027-0.616,6.356-3.982,7.911c-1.573,0.728-4.559,0.824-5.8-0.099C65.894,62.863,65.741,62.576,65.729,62.205z M22.397,22.41   c-0.742-5.064-2.621-7.587-3.843-8.731c1.287-1.049,4.047-2.845,7.877-2.845c2.415,0,5.546,1.621,8.862,3.337   C39.667,16.435,44.623,19,49.834,19h20.014l-8.554,60.197C59.475,79.658,53.547,81,46,81c-7.52,0-13.435-1.332-15.275-1.799   L22.397,22.41z M46,89.006c-7.343,0-13.6-1.27-15.766-1.767l0.5-5.973C33.088,81.837,38.769,83,46,83   c7.22,0,12.895-1.159,15.256-1.73l0.509,5.963C59.601,87.731,53.354,89.006,46,89.006z M81,57.667   c0,4.239-0.843,8.448-6.955,10.521c-4.552,1.545-7.744,2.712-9.719,3.88l1.02-7.174c0.984,0.598,2.314,0.881,3.676,0.881   c1.391,0,2.796-0.276,3.834-0.756C77.604,62.826,78,59.012,78,55.292v-20.75c0-3.345-2.223-4.531-4.125-4.531   c-0.708,0-2.285,0.112-3.703,0.93l0.656-4.618c0.888,0.296,2.189,0.501,4.109,0.501c4.47,0,6.062,3.18,6.062,6.156V57.667z"/></g></svg>
+              <div class="glass-info">
+                <div class="glass-size">1140 ml</div>
+                <div class="glass-name">
+                  <div class="glass-text"></div>
+                </div>
+            </div>
+          </div>
+          <div id="_1400" class="glass-cell">
+            <svg class="glass-svg" version="1.0" xmlns="http://www.w3.org/2000/svg"
+             width="102.000000pt" height="345.000000pt" viewBox="0 0 102.000000 345.000000"
+             preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,345.000000) scale(0.100000,-0.100000)"
+            fill="#000000" stroke="none">
+            <path d="M348 3254 c-78 -18 -137 -50 -148 -78 -6 -17 0 -52 26 -132 51 -159
+            99 -352 128 -509 46 -244 51 -389 37 -995 -6 -300 -16 -587 -21 -638 -11 -105
+            -30 -157 -89 -234 -53 -71 -71 -116 -71 -181 0 -98 49 -192 125 -241 50 -33
+            68 -33 82 3 10 27 14 29 50 24 21 -3 55 -1 75 5 29 8 38 7 42 -4 4 -10 -6 -16
+            -35 -20 -28 -5 -36 -10 -27 -15 8 -6 -5 -9 -34 -9 -26 0 -49 -4 -52 -9 -9 -14
+            50 -24 92 -16 51 9 122 45 122 61 0 12 36 38 50 37 35 -3 72 89 72 177 0 81
+            -14 115 -80 202 -28 37 -57 85 -63 105 -18 53 -25 1206 -9 1388 20 232 96 569
+            184 820 25 71 46 139 46 150 0 43 -73 88 -178 111 -84 17 -249 17 -324 -2z
+            m346 -19 c57 -15 126 -58 126 -78 0 -6 -7 -2 -15 9 -13 17 -14 15 -9 -23 5
+            -41 4 -43 -38 -64 -24 -12 -54 -26 -68 -30 -17 -6 -9 -7 24 -3 l49 6 -8 -49
+            c-4 -26 -10 -50 -13 -53 -14 -11 -32 -51 -32 -72 0 -13 -6 -46 -14 -74 -9 -35
+            -10 -57 -3 -69 6 -12 6 -16 -1 -11 -6 4 -10 -1 -10 -11 1 -22 -4 -55 -37 -213
+            -58 -281 -58 -284 -56 -960 1 -344 6 -656 12 -693 9 -69 35 -133 63 -156 9 -8
+            16 -20 16 -27 0 -8 4 -14 9 -14 15 0 51 -83 51 -116 -1 -37 -87 -164 -126
+            -184 -20 -10 -59 -15 -125 -15 -87 0 -101 3 -155 30 -38 20 -64 41 -73 59 -13
+            27 -16 95 -7 141 3 11 5 24 5 28 1 5 6 5 12 1 7 -4 10 -1 7 7 -4 13 0 21 32
+            56 8 9 15 21 16 27 1 6 13 36 27 67 46 100 57 238 67 809 11 571 5 716 -37
+            950 -15 80 -26 157 -26 172 0 15 -4 25 -10 21 -5 -3 -6 3 -3 15 4 11 2 23 -3
+            26 -6 4 -8 13 -5 20 3 8 -11 62 -31 122 -28 86 -34 114 -26 135 5 15 7 30 4
+            33 -3 3 12 3 33 0 l39 -5 -35 16 c-44 20 -100 74 -100 95 0 36 73 73 180 90
+            72 12 221 4 294 -15z"/>
+            </g>
+            </svg>
+            <div class="glass-info">
+              <div class="glass-size">1400 ml</div>
+              <div class="glass-name">
+                <div class="glass-text"></div>
+              </div>
+          </div>
+        </div>
+          </div>
+      </div>
+      <div class="iib-c iib-c-single iib-c-viz iib-c-viz-text">
+        <div class="iib-w iib-w-default iib-w-page iib-w-viz iib-w-viz-text">
+          <div class="iib-vt iib-ca">
+            <h1></h1>
+            <p>? Bob Hawke. Former Australian Prime Minister and world record holder for the fastest sculling of a yard of beer (11 seconds)</p>
+
+          </div>
+        </div>
+      </div>
+    </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+      <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/assets/js/vendor/tether.min.js"></script>
+    <script src="/assets/js/vendor/holder.min.js"></script>
+    <script>
+      $(function () {
+        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+
+        $(".card").click(function() {
+          window.location = $(this).find("a").attr("href");
+          return false;
+        });
+
+      });
+    </script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+</html>

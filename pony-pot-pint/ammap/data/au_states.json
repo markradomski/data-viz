@@ -1,0 +1,98 @@
+ [
+  {
+    "115": null,
+    "140": "pony",
+    "170": null,
+    "200": "seven",
+    "285": "middy",
+    "425": "schooner",
+    "570": "pint",
+    "1140": "jug",
+    "id": "AU-NSW",
+    "capital": "Sydney"
+  },
+  {
+    "115": null,
+    "140": null,
+    "170": null,
+    "200": null,
+    "285": "half pint / middy",
+    "425": "schooner",
+    "570": "pint",
+    "1140": "jug",
+    "id": "AU-ACT",
+    "capital": "Canberra"
+  },
+  {
+    "115": null,
+    "140": null,
+    "170": null,
+    "200": "seven",
+    "285": "handle",
+    "425": "schooner",
+    "570": "pint",
+    "1140": "jug",
+    "id": "AU-NT",
+    "capital": "Darwin"
+  },
+  {
+    "115": null,
+    "140": "pony",
+    "170": null,
+    "200": "beer",
+    "285": "pot",
+    "425": "schooner",
+    "570": "pint",
+    "1140": "jug",
+    "id": "AU-QLD",
+    "capital": "Brisbane"
+  },
+  {
+    "115": null,
+    "140": "pony",
+    "170": "butcher",
+    "200": "butcher",
+    "285": "schooner",
+    "425": "pint",
+    "570": "imperial pint",
+    "1140": "jug",
+    "id": "AU-SA",
+    "capital": "Adelaide"
+  },
+  {
+    "115": "small beer",
+    "140": null,
+    "170": "six (ounce)",
+    "200": "seven (ounce)",
+    "285": "ten (ounce)",
+    "425": "fifteen / schooner",
+    "570": "pint",
+    "1140": "jug",
+    "id": "AU-TAS",
+    "capital": "Hobart"
+  },
+  {
+    "115": "foursie",
+    "140": "horse/pony",
+    "170": "small glass",
+    "200": "glass",
+    "285": "pot",
+    "425": "schooner",
+    "570": "pint",
+    "1140": "jug",
+    "id": "AU-VIC",
+    "capital": "Melbourne"
+  },
+  {
+    "115": "shetland",
+    "140": "pony",
+    "170": "bobbie/six",
+    "200": "glass",
+    "285": "middy/half pint",
+    "425": "schooner",
+    "570": "pint",
+    "1140": "jug",
+    "id": "AU-WA",
+    "capital": "Perth"
+  }
+]

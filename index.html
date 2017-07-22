@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Data Viz Portfolio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="d-flex justify-content-between">
+        <a href="/" class="navbar-brand">portfolio</a>
+      </div>
+    </div>
+
+    <div class="album text-muted">
+      <div class="container">
+
+        <div class="row">
+          <a class="card" href="/there-will-be-blood/">
+            <img class="card-img-top" src="images/unemployment-map.jpg" alt="">
+            <p class="card-text">There will be blood</p>
+          </a>
+          <a class="card" href="/pollywaffle/">
+            <img class="card-img-top" src="images/pollywaffle.png" alt="">
+            <p class="card-text">Smashed Avocado on Toast Property Price Index</p>
+          </a>
+          <a class="card" href="/dying-to-be-here/">
+            <img class="card-img-top" src="images/dying-to-be-here.png" alt="">
+            <p class="card-text">Dying to be here</p>
+          </a>
+          <a class="card" href="/pony-pot-pint/">
+            <img class="card-img-top" src="images/pony-pot-pint.png" alt="">
+            <p class="card-text">Pony, pot or Pint?</p>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="text-muted">
+      <div class="container">
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+      <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/assets/js/vendor/tether.min.js"></script>
+    <script src="/assets/js/vendor/holder.min.js"></script>
+    <script>
+      $(function () {
+        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+
+        $(".card").click(function() {
+          window.location = $(this).find("a").attr("href");
+          return false;
+        });
+
+      });
+    </script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
